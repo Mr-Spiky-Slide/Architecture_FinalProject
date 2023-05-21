@@ -15,6 +15,7 @@ public abstract class CPU implements Player{
         this.score = score;
     }
 
+
     @Override
     public void roll(Zonk zonk, int activeDice, UI ui) {
         zonk.rollDice(activeDice);
@@ -29,6 +30,16 @@ public abstract class CPU implements Player{
         }
     }
 
+    /**
+     * Uses similar logic to how rolls are scored to decide weather the CPU should lock the dice.
+     * It starts with the highest scoring options then filters down to the lower scoring ones.
+     * There are several if statements to prevent out of bounds errors.
+     * The loop iterates through the fresh dice and checks if a 5,4,or3 of a kind would be in our out of bounds
+     * Then it checks for the 5,4,or 3 of a kind, then for 1s, and finally for 5s
+     * @param dice
+     * @param ui
+     * @param zonk
+     */
     @Override
     public void saveDice(ArrayList<Integer> dice, UI ui, Zonk zonk) {
 
@@ -84,21 +95,27 @@ public abstract class CPU implements Player{
 
     }
 
-
+    /**
+     * score getter
+     * @return
+     */
     public int getScore(){
         return score;
     }
 
+    /**
+     * Name getter
+     * @return
+     */
     public String getName() {
         return name;
     }
 
 
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    /**
+     * score setter
+     * @param val
+     */
     public void addToScore(int val){
         this.score = this.score + val;
     }

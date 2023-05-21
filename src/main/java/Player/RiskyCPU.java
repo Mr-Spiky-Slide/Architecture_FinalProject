@@ -14,6 +14,12 @@ public class RiskyCPU extends CPU{
 
     }
 
+    /**
+     * only will end the turn if the score for that turn is 250 or greater
+     * @param scoreBuffer
+     * @param ui
+     * @return
+     */
     @Override
     public boolean endTurnAsk(int scoreBuffer, UI ui) {
         if (scoreBuffer >= 600) {
