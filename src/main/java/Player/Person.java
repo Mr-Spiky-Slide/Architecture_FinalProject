@@ -16,6 +16,12 @@ public class Person implements Player{
         this.score = score;
     }
 
+    /**
+     * Takes in zonk active dice and ui in order to use the roll functions
+     * @param zonk
+     * @param activeDice
+     * @param ui
+     */
     @Override
     public void roll(Zonk zonk, int activeDice, UI ui) {
         ui.enterToRoll();
